@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Veil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Inter:wght@300&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #0f0f0f, #000);
+      color: #ddd;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-style: italic;
+      color: #eee;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #aaa;
+      letter-spacing: 0.5px;
+    }
+
+    .fog {
+      font-size: 2rem;
+      animation: fade 3s ease-in-out infinite;
+    }
+
+    @keyframes fade {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="fog">🌫️</div>
+  <h1>The veil is under construction.</h1>
+  <p>Return soon, Seeker.</p>
+  <audio autoplay loop muted playsinline id="wind-audio">
+    <source src="https://cdn.pixabay.com/download/audio/2023/01/17/audio_2d687f5cec.mp3?filename=smooth-cold-wind-looped-135538.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+  <script>
+  const wind = document.getElementById('wind-audio');
+  const unmute = () => {
+    console.log("User clicked, trying to unmute..."); // 💡 Add this line
+    wind.muted = false;
+    window.removeEventListener('click', unmute);
+  };
+  window.addEventListener('click', unmute);
+</script>
+
+
+</body>
+</html>
